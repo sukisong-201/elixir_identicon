@@ -2,7 +2,7 @@ defmodule Identicon do
     def main(input) do
       input
       |> hash_input
-    end
+    end 
 
     def hash_input(input) do
       :crypto.hash(:md5, input)
