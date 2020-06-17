@@ -15,6 +15,12 @@ defmodule Identicon do
       |> Enum.chunk_every(3)
     end
 
+    def mirror_row(row) do
+      [first, second | _tail] = row
+
+      row ++ [second, first]
+    end
+
     def hash_input(input) do
       hex = :crypto.hash(:md5, input)
       |> :binary.bin_to_list
